@@ -16,7 +16,7 @@ Definition prev (n:Nats): Nats:=
 Compute next (S O).
 Compute prev (S(S O)).
 
-Definition add (a b:Nats): Nats:=
+Fixpoint add (a b:Nats): Nats:=
   match a with
   |S a' => S (add a' b)
   |O => b
