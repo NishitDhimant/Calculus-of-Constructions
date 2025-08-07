@@ -2,5 +2,4 @@
 
 7 Aug, 2025:
 I have trouble commiting an edited file to main repository.
-New branch created, modified and merged succesfully (somehow).
-Old branch deleted.
+New branch created, modified and merged succesfully (somehow). Old branch deleted.
