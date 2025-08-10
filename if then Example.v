@@ -14,6 +14,8 @@ Definition or (a b:bool): bool:=
 Definition xor (a b:bool): bool:=
   if (or (and a b) (neg (or a b))) then true else false.
 
+Notation "x'" := neg x.
+
 (* Example test1: and true true = true.
 Proof. simpl. reflexivity. Qed.
 Example test2: and true false = false.
