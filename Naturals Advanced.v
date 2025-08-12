@@ -1,18 +1,27 @@
 Inductive Nats: Type:=
   |O
-  |S(n:Nats).
+  |S(n:Nats)
+  |P(n:Nats).
 Notation "0":= O.
 
 Definition next (n:Nats): Nats:=
   match n with
   |m => S(m)
+  |P(m) => m
   end.
 
 Definition prev (n:Nats): Nats:=
   match n with
-  |0 => 0
-  |S(m) => m
+  |n => P(n)
   end.
+
+Fixpoint mod (n: Nats): Nats:=
+  match n with
+  |0 => 0
+  |S m => S m
+  |P m => S (mod m)
+  end.
+Compute (mod (P(S 0))).
 
 Compute prev (next(S(next(S(next(S(prev(S 0)))))))). (*5*)
 (*This proves the need to simplify "prev(next n)" is redundant.*)
@@ -24,16 +33,15 @@ Fixpoint even (n: Nats): bool:=
   |S 0 => false
   |S(S m) => even m
   |0 => true
+  |P m => even (mod m)
   end.
-Definition odd (n:Nats): bool:=
-  if (even n) then false else true.
 Compute even (S(S(S 0))).
-Compute odd (S(S(S 0))).
 
 Fixpoint add (a b: Nats): Nats:=
   match a with
   |S a' => S (add a' b)
   |0=> b
+  |P a' => 
   end.
 
 Fixpoint mul (a b: Nats): Nats:=
@@ -52,19 +60,4 @@ Compute pow (S(S 0)) (S(S(S 0))).
 
 Fixpoint subt (a b:Nats): Nats:=
   match a with
-  |0 => 0
-  |S a' => match b with
-           |0 => a
-           |S b' => subt a' b'
-           end
-  end.
-Compute subt (S(S(S(S 0)))) (S(S(S(S(S 0))))).
-
-Fixpoint equal (a b: Nats): bool:=
-  match a,b with
-  |0,0 => true
-  |S _,0 => false
-  |0,S _ => false
-  |S a', S b' => equal a' b'
-  end.
-Compute equal (S(S(S 0))) (S(S 0)).
+  |
