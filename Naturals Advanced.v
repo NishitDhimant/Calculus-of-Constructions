@@ -1,3 +1,5 @@
+(*This needs work. Doesnt work as of now...*)
+
 Inductive Nats: Type:=
   |O
   |S(n:Nats)
