@@ -8,3 +8,8 @@ New branch created, modified and merged succesfully (somehow). Old branch delete
 Created a separate file for experimenting on negative numbers. (Naturals Advanced.v)
 Might try to implement division in Default Naturals Example.
 Requires returning two values by encoding them into a single value and decoding them after return.
+
+15 Aug, 2025:
+I tried creating the base 10 number system but could only manage 0-9.
+New error messages creep up whenever trying anything new.
+Work halted in negative numbers for now. Will study scope next.
