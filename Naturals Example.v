@@ -1,16 +1,7 @@
 Inductive Nats: Type:=
   |O
   |S(n:Nats).
-Notation "0":= O.
-Notation "1":= (S 0).
-Notation "2":= (S 1).
-Notation "3":= (S 2).
-Notation "4":= (S 3).
-Notation "5":= (S 4).
-Notation "6":= (S 5).
-Notation "7":= (S 6).
-Notation "8":= (S 7).
-Notation "9":= (S 8).
+Notation "0" := O.
 
 Definition next (n:Nats): Nats:=
   match n with
