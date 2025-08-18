@@ -67,5 +67,3 @@ Fixpoint equal (a b: Nats): bool:=
   |S a', S b' => equal a' b'
   end.
 Compute equal (S(S(S 0))) (S(S 0)).
-
-Notation "10":= (S 9).
