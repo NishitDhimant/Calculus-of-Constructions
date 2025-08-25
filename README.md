@@ -16,4 +16,4 @@ Work halted in negative numbers for now. Will study scope next.
 
 21 Aug, 2025:
 Discussion tab set up.
-Furhtur updates might be shared there onwards.
+Furthur updates might be shared there onwards.
